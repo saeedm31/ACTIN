@@ -370,7 +370,7 @@ def read_data(pfile, rv_in=None, obj_name=None, force_calc_wave=False, plot_spec
 
             try:
                 rv = ccf_hdr['HIERARCH {} DRS CCF RVC'.format(obs)] # [km/s]
-                rv_err = ccf_hdr['HIERARCH {} DRS DVRMS'.format(obs)] # [m/s]
+                rv_err = ccf_hdr['HIERARCH {} DRS CCF NOISE'.format(obs)] # [m/s] # 'HIERARCH {} DRS DVRMS'.format(obs)
             except KeyError as err:
                 print("*** ERROR: {}, Ignoring measurement.".format(err))
                 return
